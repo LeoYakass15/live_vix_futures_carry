@@ -1,0 +1,8 @@
+n_trials,27.0
+lucky_sharpe_annual,0.2537
+prob_normal_in_sample,0.8759
+prob_with_skew_kurtosis_in_sample,0.8675
+deflated_sharpe_in_sample,0.6333
+prob_normal_full_period,0.723
+prob_with_skew_kurtosis_full_period,0.71
+deflated_sharpe_full_period,0.2971

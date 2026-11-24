@@ -1,0 +1,51 @@
+                     Always short  ...  Rule traded on Friday (not possible live)
+Return (ann.)               0.035  ...                                      0.048
+Vol (ann.)                  0.195  ...                                      0.142
+Sharpe                      0.178  ...                                      0.335
+t-stat                      0.816  ...                                      1.534
+Max drawdown               -0.630  ...                                     -0.287
+Worst week                 -0.485  ...                                     -0.226
+Skew                       -6.285  ...                                     -2.707
+Kurtosis                  102.393  ...                                     23.265
+Weeks in the market         1.000  ...                                      0.881
+Weeks                    1091.000  ...                                   1091.000
+
+[10 rows x 6 columns]
+
+ n_trials                               27.000
+lucky_sharpe_annual                     0.254
+prob_normal_in_sample                   0.876
+prob_with_skew_kurtosis_in_sample       0.867
+deflated_sharpe_in_sample               0.633
+prob_normal_full_period                 0.723
+prob_with_skew_kurtosis_full_period     0.710
+deflated_sharpe_full_period             0.297
+dtype: float64
+
+Worst weeks:
+             Always short   Rule
+date                           
+2018-02-09        -0.485 -0.509
+2017-08-11        -0.231 -0.231
+2007-03-02        -0.113 -0.113
+2018-02-02        -0.104 -0.104
+2015-08-28        -0.104 -0.108
+2015-08-21        -0.096 -0.096
+2020-02-28        -0.093 -0.093
+2021-11-26        -0.093 -0.093
+
+Regression on S&P: alpha -1.98%/yr (t=-0.52), beta 0.45 (t=14.97), R2 0.17
+
+Long front future vs SPVXSTR: correlation 0.91, average month -4.1% vs -3.1%
+
+                          Always short  ...  Rule, if traded on Friday
+Crisis                                 ...                           
+Lehman (Sep-Nov 2008)          -0.211  ...                     -0.027
+US downgrade (Aug 2011)        -0.152  ...                     -0.028
+China deval. (Aug 2015)        -0.203  ...                     -0.098
+Volmageddon (Feb 2018)         -0.535  ...                     -0.106
+Covid (Feb-Mar 2020)           -0.205  ...                     -0.114
+Yen carry (Aug 2024)           -0.104  ...                     -0.045
+Tariffs (Apr 2025)             -0.056  ...                      0.000
+
+[7 rows x 3 columns]
