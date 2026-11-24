@@ -6,6 +6,7 @@ into data/cboe/vix_futures_cboe.csv. Then, in this order:
 
     python live.py week        -> P&L of the week that just ended, chart, block for LIVE.md
     python live.py positions   -> position for Monday (traded at Monday's settlement)
+    python live.py chart       -> the empty "live vs backtest" cone, before the first week
 
 and I commit before Sunday midnight, Paris time, when VIX futures reopen.
 """
@@ -134,13 +135,14 @@ def live_chart(hist):
     """Live P&L against what the backtest expects (mean, 1 and 2 standard deviations)."""
     bt_pnl = pd.read_csv("results/weekly_pnl.csv", index_col=0)["rule"]
     mu, sigma = bt_pnl.mean(), bt_pnl.std()
-    weeks = np.arange(0, len(hist) + 1)
+    weeks = np.arange(0, max(52, len(hist)) + 1)          # the cone covers the first year
+    live = np.r_[0, hist["cumulative"].values] if len(hist) else np.array([0.0])
     plt.figure(figsize=(8, 4))
     for k, a in [(2, 0.12), (1, 0.25)]:
         plt.fill_between(weeks, mu * weeks - k * sigma * np.sqrt(weeks), mu * weeks + k * sigma * np.sqrt(weeks),
                          color=bt.BLUE, alpha=a, lw=0)
     plt.plot(weeks, mu * weeks, color=bt.BLUE, ls="--", label="Backtest expectation (1 and 2 std)")
-    plt.plot(weeks, np.r_[0, hist["cumulative"].values], color="black", lw=2, marker="o", label="Live")
+    plt.plot(np.arange(len(live)), live, color="black", lw=2, marker="o", label="Live")
     plt.axhline(0, color="grey", lw=0.8)
     plt.xlabel("Weeks since launch"); plt.ylabel("Cumulative return"); plt.legend(loc="upper left")
     plt.title("Live vs backtest"); plt.tight_layout(); plt.savefig("results/6_live_vs_backtest.png", dpi=120)
@@ -148,7 +150,9 @@ def live_chart(hist):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) > 1 and sys.argv[1] == "positions":
+    if len(sys.argv) > 1 and sys.argv[1] == "chart":         # empty cone before the first week
+        live_chart(pd.DataFrame({"cumulative": []}))
+    elif len(sys.argv) > 1 and sys.argv[1] == "positions":
         new_positions()
     else:
         weekly_report()

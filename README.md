@@ -144,9 +144,10 @@ On 20 November the curve was in backwardation (UX1 28.46 > UX2 26.25), so the bo
 
 ![Live vs backtest](results/6_live_vs_backtest.png)
 
-*(The chart appears after the first live week.)* After a few weeks a t-stat means nothing:
-three months at a Sharpe of 0.4 give t = 0.2. The real question is whether the live P&L
-stays inside the range the backtest expects.
+The shaded cone is what the backtest expects over the first year; the black line is the live
+book, added every week. After a few weeks a t-stat means nothing: three months at a Sharpe
+of 0.4 give t = 0.2. The real question is whether the live P&L stays inside the range the
+backtest expects.
 
 **Latest week and full history:** [LIVE.md](LIVE.md).
 
