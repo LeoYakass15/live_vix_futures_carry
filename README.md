@@ -139,8 +139,8 @@ short letter to investors.
 | NAV (start 1,000,000 USD) | - |
 | Worst week | - |
 
-**First position**: computed on Friday 27 November 2026 and published on Sunday 29 November.
-On 20 November the curve was in backwardation (UX1 28.46 > UX2 26.25), so the book would be in cash.
+**First position (Friday 27 November 2026)**: UX1 22.84 > UX2 22.79, the curve is in slight
+backwardation (-0.2%), so the book is **in cash** for the week of 30 November.
 
 ![Live vs backtest](results/6_live_vs_backtest.png)
 

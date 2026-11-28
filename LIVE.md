@@ -6,7 +6,26 @@ otherwise. The position changes every week. The newest entry is on top.
 
 | Week ending | Week | Since launch | NAV (USD) | Comment |
 |---|---|---|---|---|
-| | | | | |
+| 27/11/2026 (launch) | - | - | 1,000,000 | Backwardation (-0.2%): cash for the week of 30 November |
+
+---
+
+## Launch, Friday 27 November 2026: position for Monday 30 November
+
+**Market in two lines**: the VIX stress of mid-November fades. The front future falls from
+28.46 on 20 November to 22.84 on 27 November, and the curve is almost flat.
+
+| Friday | UX1 | UX2 | UX2 / UX1 - 1 | Signal |
+|---|---|---|---|---|
+| 27/11/2026 | 22.84 | 22.79 | -0.2% | backwardation: **cash** |
+
+Position: **0 contracts**. The future I would hold expires on 16 December 2026 (price 22.84);
+its volatility over 20 days is 150%, so even in contango the rule would only short 7% of the
+NAV. Stress test: if the VIX doubles on Monday, the book loses 0 USD.
+
+**Comment**: the first live decision is to do nothing. The curve is still slightly inverted,
+so the fear is not over for the rule. Prices: CBOE settlements, checked against the
+Bloomberg screen CT UX1 (22.8402 and 22.7857, same to the 4th decimal).
 
 ---
 
